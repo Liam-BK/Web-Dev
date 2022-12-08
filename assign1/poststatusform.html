@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color: darkgrey;
+    }
+    h1{
+        color: orange;
+    }
+    p{
+        color: orange;
+    }
+</style>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>status posting system</title>
+</head>
+<body>
+<form action="poststatusprocess.php" method="post">
+<p>
+<!--text input not optional-->
+<label for="statuscode" style="margin-right: 10px;">Status code:</label>
+<input type="text" id="statuscode" name="statuscode" required/><br>
+<label for="status" style="margin-right: 44px;">Status:</label>
+<input type="text" id="status" name="status" size="64" required/>
+<br>
+<br>
+<!--date not optional-->
+<label for="date">Date:</label>
+<input type="date" placeholder="dd-mm-yyyy" value="<?php print(date("Y-m-d")); ?>" id="date" name="date" style="margin-left: 53px">
+<br>
+<br>
+<!--radio buttons not optional-->
+share
+<label for="share">public</label>
+<input type="radio" id="public" name="share" value="public" style="margin-left: 40px" checked>
+<br>
+<label for="share">friends</label>
+<input type="radio" id="friends" name="share" value="friends" style="margin-left: 74px">
+<br>
+<label for="share">only me</label>
+<input type="radio" id="only me" name="share" value="only me" style="margin-left: 66px">
+<br>
+<br>
+<!--dcheckboxes optional-->
+<label for="permission">allow like: </label>
+<input type="checkbox" name="allowlikes" value="likes" style="margin-left: 50px" checked>
+<br>
+<label for="permission">allow comments</label>
+<input type="checkbox" name="allowcomments" value="comments" style="margin-left: 13px" checked>
+<br>
+<label for="permission">allow sharing</label>
+<input type="checkbox" name="allowsharing" value="shares" style="margin-left: 31px" checked>
+<br>
+<br>
+<input type="submit" value="Post"/>
+<input type="reset" value="Reset" />
+<!--<button type="button">Reset</button>-->
+</p>
+</form>
+<!--<br>-->
+</body>
+</html>
+<!--http://prq2929.cmslamp14.aut.ac.nz/assign1/poststatusform.php-->
